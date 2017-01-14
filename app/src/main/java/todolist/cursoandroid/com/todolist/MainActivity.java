@@ -54,12 +54,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            listaTarefas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            listaTarefas.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
                 @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                     //Log.i("ITEM: ", + position + " / " + ids.get(position));
                     removarTarefa(ids.get(position));
-                }
+                    return true;
+                    }
             });
 
             //recuperar tarefas
